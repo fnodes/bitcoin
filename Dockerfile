@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER Tyler Baker <forcedinductionz@gmail.com>
 
-ARG VERSION=0.18.0
+ARG VERSION=0.18.1
 ARG GLIBC_VERSION=2.28-r0
 
 ENV FILENAME bitcoin-${VERSION}-x86_64-linux-gnu.tar.gz
