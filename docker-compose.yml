@@ -1,0 +1,18 @@
+version: '3.2'
+
+services:
+  bitcoin:
+    image: fullnodes/bitcoin:latest
+    restart: always
+    network_mode: "host"
+    tty: true
+    volumes:
+      - bitcoin:/root/.bitcoin
+    environment:
+      - BTC_DISABLE_WALLET=0
+      - BTC_TXINDEX=1
+      - BTC_RPCPASSWORD=changeme
+      - BTC_RPCUSER=admin
+
+volumes:
+    bitcoin:

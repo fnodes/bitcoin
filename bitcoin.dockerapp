@@ -1,0 +1,31 @@
+version: 0.1.0
+name: bitcoin
+description: Bitcoin daemon and cli tools
+
+---
+
+version: '3.2'
+
+services:
+  bitcoin:
+    image: hub.foundries.io/magicman/bitcoin:latest
+    restart: always
+    network_mode: "host"
+    tty: true
+    volumes:
+      - bitcoin:/root/.bitcoin
+    environment:
+      - BTC_DISABLE_WALLET=${DISABLE_WALLET}
+      - BTC_TXINDEX=${INDEX}
+      - BTC_RPCPASSWORD=${PASSWORD}
+      - BTC_RPCUSER=${USERNAME}
+
+volumes:
+    bitcoin:
+
+---
+
+DISABLE_WALLET: 0
+INDEX: 1
+PASSWORD: changeme
+USERNAME: admin
