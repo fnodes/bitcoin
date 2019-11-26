@@ -30,7 +30,7 @@ RUN cat SHA256SUMS.asc | grep bitcoin-${VERSION}-$(cat /tmp/arch).tar.gz | sha25
 
 EXPOSE 8332 8333 18332 18333 28332 28333
 
-ADD entrypoint.sh /usr/local/bin/entrypoint.sh
+ADD bin/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod a+x /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
